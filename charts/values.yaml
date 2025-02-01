@@ -8,10 +8,10 @@ replicaCount: 1
 image:
   repository: henrygd/beszel
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: ""
 
 imagePullSecrets: []
-nameOverride: "beszel"
+nameOverride: ""
 fullnameOverride: ""
 
 
@@ -78,18 +78,9 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
 
-storage:
-  className: local-path
-  size: "500Mi"
+# volumes: {}
 
-volumes:
-  - name: beszel-data
-    persistentVolumeClaim:
-      claimName: beszel-pvc
-
-volumeMounts:
-  - name: beszel-data
-    mountPath: /beszel_data
+# volumeMounts: {}
 
 # -- `spec.PersitentVolumeClaim` configuration
 persistentVolumeClaim:
@@ -104,6 +95,8 @@ persistentVolumeClaim:
 
   accessModes:
     - ReadWriteOnce
+
+  storageClass: ""
 
   # -- volume claim size
   size: "500Mi"
