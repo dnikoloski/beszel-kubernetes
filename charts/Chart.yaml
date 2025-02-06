@@ -1,8 +1,8 @@
 apiVersion: v1
 description: Installs beszel-hub in kubernetes
 home: https://github.com/dnikoloski/beszel-kubernetes/tree/main/charts/beszel-hub
-name: pihole
-appVersion: "2025.01.0"
+name: beszel-hub
+appVersion: "0.9"
 # Do not touch will be updated during release
 version: 0.1.0
 sources:
